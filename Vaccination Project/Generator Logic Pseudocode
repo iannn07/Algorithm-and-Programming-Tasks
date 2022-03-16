@@ -1,0 +1,72 @@
+Module main()
+Declare String vaksinKe
+Declare String nik
+Declare Integer tglVaksin1
+Declare Integer tglVaksin2
+Declare Integer blnVaksin1
+Declare Integer blnVaksin2
+Declare Integer thnVaksin1
+Declare Integer thnV ksin2
+
+Display "Masukkan NIK Anda:"
+Input nik
+
+While vaksinKe != Y && vaksinKe != N 
+	Display "Apakah sudah vaksin? (Y/N)"
+	Input vaksinKe
+End While
+If vaksinKe == N Then
+	Display "Tanggal vaksin pertama/hari ini"
+	Input tglVaksin1
+	Input blnVaksin1
+	Input thnVaksin1
+Else If vaksinKe == Y Then
+	Display "Tanggal vaksin kedua/hari ini"
+	Input tglVaksin2
+	Input blnVaksin2
+	Input thnVaksin2
+Call generator(vaksinKe, tglVaksin1, tglVaksin2, blnVaksin1, blnVaksin2, thnVaksin1, thnVaksin2)
+End Module
+
+Module generator(String vaksinKe, Integer tglVaksin1, Integer tglVaksin2, Integer blnVaksin1, Integer blnVaksin2, Integer thnVaksin1, Integer thnVaksin2)
+
+If vaksinKe == N Then
+Display "-----------------FIRST VACCINE CERTIFICATE------------------"
+Display "------------------------------------------------------------\n"
+Display "NOMOR SERTIFIKAT ANDA"
+Display "VKS1-"
+	If blnVaksin1 == 13 Then 
+		set blnVaksin1 = 1;
+		Display thnVaksin1
+	If blnVaksin1 < 10 Then
+		Display "0", blnVaksin1
+	Else
+		Display blnVaksin1
+	If tglVaksin1 < 10 Then
+		Display "0", tglVaksin1
+	Else
+		Display tglVaksin1
+	End If
+		Display "-", nik
+Else If vaksinKe == Y Then
+Display "-----------------SECOND VACCINE CERTIFICATE------------------"
+Display "------------------------------------------------------------\n"
+Display "NOMOR SERTIFIKAT ANDA"
+Display "VKS2-"
+
+	If blnVaksin2 == 13 Then 
+		set blnVaksin2 = 1;
+		Display thnVaksin2
+	If blnVaksin2 < 10 Then
+		Display "0", blnVaksin2
+	Else
+		Display blnVaksin2
+	If tglVaksin2 < 10 Then
+		Display "0", tglVaksin2
+	Else
+		Display tglVaksin2
+	End If
+		Display "-", nik
+End If
+
+End Module
